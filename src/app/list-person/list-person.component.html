@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of Person; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{person.name}}</td>
+            <td>{{person.surname}}</td>
+            <td>
+                <span (click)="removePerson(person)" class="btn btn-danger">
+                    Delete
+                </span> &nbsp;
+                <span routerLink="/update-person/{{person.id}}" class="btn btn-primary">
+                    Edit
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
